@@ -1,0 +1,100 @@
+<!doctype html>
+
+<html>
+<head>
+    <title>TripPlanner</title>
+
+    <meta name="author" content="Gerardo De Rosa">
+    <meta name="keywords" content="De Rosa, Gerardo, MetatraderToBinance">
+    <meta name="description" content="MetatraderToBinance application">
+    <meta name="viewport"
+          content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Amiko&display=swap" rel="stylesheet">
+
+    <link type="text/css" rel="stylesheet" href="../static/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src=" https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+
+
+    <script src="https://kit.fontawesome.com/410e5bdac4.js" crossorigin="anonymous"></script>
+
+
+    <link rel="shortcut icon" href="Images/logo.png" type="image/png">
+    <link rel="icon" href="Images/logo.png" type="image/png">
+
+
+</head>
+
+<body>
+<script src="{{url_for('static', filename='app.js')}}"></script>
+<div id="backgroundpages">
+
+     <%@ include file="navbar.jsp"%>
+
+
+<div id="logopages">
+<a  href="http:\\127.0.0.1:80\home"><img src="../static/Images/logo.png"></a>
+    <h1>Log In or Register</h1>
+</div>
+</div>
+
+
+<div class="paragraph", id="loginn">
+
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <div  class="alert alert-primary alert-dismissible fade show" role="alert">
+               <button type="button" onclick="close()" class="close" id="chiudif" data-dismiss="alert">
+                <span aria-hidden="true">&times;</span>
+                                                                        <span>{{ message }}</span>
+
+                </button>
+
+
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+    <div class="form" id=""here>
+
+    <form id ="register" class="register-form">
+
+      <input id="name" type="text" placeholder="name"/>
+      <input id="password" type="password" placeholder="password"/>
+      <input id="email" type="text" placeholder="email address"/>
+      <button id="reg">create</button>
+      <p class="message">Already registered? <a href="#here">Sign In</a></p>
+    </form>
+    <form id="enter"  action="http://127.0.0.1/login" method="post" class="copy-form">
+           <input id="username" type="text" name="username" required placeholder="username"/>
+      <input id="pass" type="password" name="password"  required placeholder="password"/>
+        <button id="log" >login</button>
+      <p class="message">Not registered? <a href="#here">Create an account</a></p>
+    </form>
+  </div>
+</div>
+
+
+<footer>
+    <div id="contacts">
+        <h2 id="contacts">References</h2>
+        <a href="https://gerardoderosa.netlify.app/"><img
+            alt="" id="cont" src="../static/Images/me.png"></a>
+        <a href=" "><img
+            alt="" id="cont" src="../static/Images/gianluca.png"></a>
+
+    </div>
+
+    <p>Copyright &#169; 2020 by Gerardo De Rosa & Gianluca Annunziata</p>
+</footer>
+</body>
+ <script src="{{url_for('static', filename='app.js')}}"></script>
+ <script src="{{url_for('static', filename='login.js')}}"></script>
+
+
+</html>

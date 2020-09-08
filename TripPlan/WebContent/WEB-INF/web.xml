@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>TripPlanner</display-name>
+   <welcome-file-list>
+    <welcome-file>home</welcome-file>
+  </welcome-file-list>  
+   <resource-ref>  
+    <description>JNDI reference to a data source</description>
+    <res-ref-name>jdbc/TripPlanner</res-ref-name>
+    <res-type>javax.sql.DataSource</res-type>
+    <res-auth>Container</res-auth>
+  </resource-ref>
+  
+
+  <servlet>
+    <servlet-name>ShowData</servlet-name>
+    <servlet-class>Trip.ShowData</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ShowData</servlet-name>
+    <url-pattern>/Place</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+    <servlet-name>GetPlace</servlet-name>
+    <servlet-class>Trip.GetPlace</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetPlace</servlet-name>
+    <url-pattern>/single</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>GetEvent</servlet-name>
+    <servlet-class>Trip.GetEvent</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetEvent</servlet-name>
+    <url-pattern>/event</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>TripPlan</servlet-name>
+    <servlet-class>Trip.TripPlan</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TripPlan</servlet-name>
+    <url-pattern>/plan</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+    <servlet-name>GetPlan</servlet-name>
+    <servlet-class>Trip.GetPlan</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetPlan</servlet-name>
+    <url-pattern>/Trip</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+    <servlet-name>GetSearch</servlet-name>
+    <servlet-class>Trip.GetSearch</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetSearch</servlet-name>
+    <url-pattern>/Search</url-pattern>
+  </servlet-mapping>
+  
+  
+</web-app>
